@@ -1,0 +1,22 @@
+.tabbar {
+  display: flex;
+  align-items: center;
+  height: var(--tabbar-height);
+  background: var(--color-bg);
+  padding: 0 4px;
+  gap: 2px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
+}
+
+.tabList {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  overflow: hidden;
+  list-style: none;
+  min-width: 0;
+}

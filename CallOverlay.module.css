@@ -1,0 +1,120 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(8px);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 40px 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+}
+
+.avatarWrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 4px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarFallback {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-accent-dim);
+  color: var(--color-accent);
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulseRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  opacity: 0.5;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.2; }
+}
+
+.peerName {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.statusText {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  min-height: 18px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.actionBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+}
+
+.actionBtn:hover {
+  transform: scale(1.08);
+}
+
+.actionBtn:active {
+  transform: scale(0.94);
+}
+
+.acceptBtn {
+  background: #22c55e;
+  color: #fff;
+}
+
+.endBtn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.muteBtn {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.mutedActive {
+  background: #f59e0b;
+  color: #fff;
+}

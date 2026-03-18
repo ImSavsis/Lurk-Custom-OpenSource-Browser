@@ -1,0 +1,176 @@
+.radioActive {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+}
+
+.radio {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border-hover);
+  flex-shrink: 0;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.radioChecked {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: inset 0 0 0 3px var(--color-surface);
+}
+
+.radioLabel {
+  font-size: 13px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.dotIdle {
+  background: var(--color-text-muted);
+}
+
+.dotOn {
+  background: var(--color-success);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.dotOff {
+  background: var(--color-danger);
+}
+
+.statusText {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+.refreshBtn {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  padding: 0 2px;
+  margin-top: 6px;
+}
+
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.slider {
+  flex: 1;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+  height: 4px;
+}
+
+.sliderValue {
+  font-size: 13px;
+  color: var(--color-text);
+  min-width: 28px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.downloadWrap {
+  margin-top: 8px;
+}
+
+.progressWrap {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progressLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.progressTrack {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.usageRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.usageNum {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.usageSep {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.usageMax {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.usageLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-left: 4px;
+}
+
+.usageTrack {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.usageFill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}

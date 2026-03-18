@@ -1,0 +1,488 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 0;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.loadingSpinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.successBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-md);
+  color: #22c55e;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.closeBanner {
+  margin-left: auto;
+  opacity: 0.6;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.closeBanner:hover { opacity: 1; }
+
+.activeCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.14) 0%, rgba(99, 102, 241, 0.06) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.activeCardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activePill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: var(--radius-full);
+  color: #22c55e;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.activePlan {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.activeDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.activeCardRight {
+  text-align: right;
+}
+
+.activeDays {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.activeDaysLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.activeExpires {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.pendingBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.pendingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #eab308;
+  flex-shrink: 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.pendingSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(234, 179, 8, 0.3);
+  border-top-color: #eab308;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pendingCancel {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+}
+
+.pendingCancel:hover { color: var(--color-text); }
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.planCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out);
+}
+
+.planCard:hover {
+  border-color: var(--color-border-hover);
+}
+
+.planCardActive {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.planCardBest {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.15), 0 4px 20px rgba(99, 102, 241, 0.12);
+}
+
+.planBadge {
+  position: absolute;
+  top: -1px;
+  right: 16px;
+  padding: 3px 10px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.planName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.planPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.planPriceAmount {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.planPriceCur {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.planDesc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.planFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.planFeature {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.planFeature svg {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.planBtn {
+  width: 100%;
+  padding: 9px 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s var(--ease-out), border-color 0.15s var(--ease-out);
+  margin-top: auto;
+}
+
+.planBtn:hover:not(:disabled) {
+  background: var(--color-surface-3);
+  border-color: var(--color-border-hover);
+}
+
+.planBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.planBtnBest {
+  background: var(--color-accent);
+  border-color: transparent;
+  color: #fff;
+}
+
+.planBtnBest:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  border-color: transparent;
+}
+
+.planCurrent {
+  width: 100%;
+  padding: 9px 0;
+  border-radius: var(--radius-md);
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: auto;
+}
+
+.btnSpinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+}
+
+.noAuth {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  padding: 8px 0;
+}
+
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  padding-top: 4px;
+}
+
+.qrOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.qrHeader {
+  text-align: center;
+}
+
+.qrTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.qrPlanBadge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  background: var(--color-accent-dim);
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.qrImageWrap {
+  position: relative;
+}
+
+.qrImage {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.qrOverlayCheck {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 16, 0.6);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrSpinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(99, 102, 241, 0.3);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.qrHint {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.qrStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.qrDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.qrCancel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  font-family: var(--font-sans);
+}
+
+.qrCancel:hover { color: var(--color-text); }
+
+.ofertaOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.ofertaCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ofertaTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ofertaText {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ofertaBtns {
+  display: flex;
+  gap: 10px;
+}
+
+.ofertaCancel {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.ofertaCancel:hover { background: var(--color-surface-3); }

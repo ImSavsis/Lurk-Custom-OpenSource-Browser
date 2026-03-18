@@ -1,0 +1,176 @@
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.dotOn {
+  background: var(--color-success);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.statusText {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.urlRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.urlInput {
+  flex: 1;
+  min-width: 0;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+.locHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.locList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.locCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--color-surface-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+  width: 100%;
+}
+
+.locCard:hover {
+  background: var(--color-surface-3);
+}
+
+.locCardSelected {
+  border-color: var(--color-accent-dim);
+  background: var(--color-surface-3);
+}
+
+.locFlag {
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.locName {
+  flex: 1;
+  font-size: 12px;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.locProto {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+}
+
+.locPing {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  min-width: 44px;
+  text-align: right;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.locPing:hover {
+  background: var(--color-surface);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--color-danger);
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.note {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+  padding: 0 12px;
+}
+
+.lockCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 24px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+.lockTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.lockDesc {
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 260px;
+}

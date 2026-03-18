@@ -1,0 +1,200 @@
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  padding: 3px;
+}
+
+.tab {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: calc(var(--radius-md) - 2px);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.tabActive {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.bannerWrap {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.banner {
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(135deg, var(--color-surface-3) 0%, var(--color-surface-2) 100%);
+  border-radius: var(--radius-md);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bannerActions {
+  display: flex;
+  gap: 6px;
+}
+
+.bannerUploadBtn {
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  backdrop-filter: blur(6px);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.bannerUploadBtn:hover { background: rgba(0, 0, 0, 0.75); }
+.bannerUploadBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.avatarRow {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  margin-top: -24px;
+}
+
+.avatarWrap { position: relative; flex-shrink: 0; }
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--color-surface);
+  overflow: hidden;
+  background: var(--color-surface-2);
+}
+
+.avatarImg { width: 100%; height: 100%; object-fit: cover; }
+
+.avatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+.avatarUploadBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-surface);
+  font-size: 9px;
+  transition: opacity var(--duration-fast);
+}
+
+.avatarUploadBtn:hover { opacity: 0.85; }
+.avatarUploadBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.previewCard {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.previewBanner {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.previewGif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.previewAvatarRow {
+  padding: 0 16px;
+  margin-top: -26px;
+  position: relative;
+  z-index: 1;
+}
+
+.previewAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid var(--color-surface-2);
+  overflow: hidden;
+  background: var(--color-surface-3);
+}
+
+.previewAvatarImg { width: 100%; height: 100%; object-fit: cover; }
+
+.previewAvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+.previewBody {
+  padding: 10px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.previewName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.previewUsername {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.previewBio {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.previewEmail {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}

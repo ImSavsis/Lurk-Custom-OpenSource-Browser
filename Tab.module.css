@@ -1,0 +1,165 @@
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  min-width: 80px;
+  max-width: 220px;
+  padding: 0 8px 0 10px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 1;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+  list-style: none;
+}
+
+.tab:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text-secondary);
+}
+
+.tab.active {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.tab.incognito.active::after {
+  background: var(--color-incognito);
+}
+
+.tab.pinned {
+  min-width: unset;
+  width: 36px;
+  max-width: 36px;
+  padding: 0 6px;
+  justify-content: center;
+}
+
+.favicon {
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.faviconPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.loader {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--color-text-muted);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.audioIcon {
+  display: flex;
+  align-items: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  opacity: 0;
+  flex-shrink: 0;
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.tab:hover .close,
+.tab.active .close {
+  opacity: 1;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+.contextMenu {
+  position: fixed;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-hover);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 4px;
+  z-index: 9999;
+  min-width: 160px;
+  pointer-events: all;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.menuItem:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.menuItemDanger {
+  color: var(--color-danger);
+}
+
+.menuItemDanger:hover {
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--color-danger);
+}
+
+.menuDivider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 4px 0;
+}

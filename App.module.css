@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  pointer-events: all;
+}
+
+.panelsGroup {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.panelWrapper {
+  position: relative;
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.panelWrapperEdit {
+  outline: 1.5px dashed var(--color-accent);
+  outline-offset: -1px;
+}
+
+.settingsBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+}
+
+.editModeHiddenPanels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px 4px;
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
